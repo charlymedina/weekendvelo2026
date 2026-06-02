@@ -3,184 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekend Vélo 🚴‍♂️</title>
+    <title>Échappée en Centre-Val de Loire 🚴‍♂️</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#f0fdfa', 100: '#ccfbf1', 500: '#14b8a6', 600: '#0d9488', 900: '#134e4a' }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        body { background-color: #f4f4f5; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
-<body class="text-slate-800">
+<body class="text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- Hero Section -->
-    <header class="bg-gradient-to-br from-emerald-700 to-teal-900 text-white py-16 px-6 text-center shadow-lg relative overflow-hidden">
-        <div class="relative z-10 max-w-3xl mx-auto">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">Le Weekend Vélo 🚴‍♂️</h1>
-            <p class="text-xl md:text-2xl font-medium text-emerald-100">Trains, Tracés et Guinguette</p>
+    <!-- Hero Header -->
+    <header class="relative bg-slate-900 text-white overflow-hidden pb-24 pt-16 px-6">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-500/20 text-brand-100 border border-brand-500/30 text-sm font-semibold tracking-wider mb-4 uppercase">
+                <i class="fa-solid fa-route mr-2"></i>Roadtrip
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight">Le Weekend Vélo</h1>
+            <p class="text-xl md:text-2xl font-light text-slate-300">Tours ➔ Saint-Amand-Montrond ➔ Bléré</p>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto p-4 md:p-8 -mt-8 relative z-20">
+    <main class="max-w-4xl mx-auto p-4 md:p-8 -mt-16 relative z-20 space-y-8">
 
-        <!-- L'Équipe et Logistique -->
-        <section class="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8 border border-slate-100">
-            <h2 class="text-2xl font-bold mb-6 text-slate-800 flex items-center gap-2">
-                👥 L'Équipe & Logistique
-            </h2>
+        <!-- Section Équipe -->
+        <section class="glass-card rounded-3xl shadow-xl p-8">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-users text-brand-500 mr-3"></i>Le Peloton</h2>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Peloton -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-3 text-slate-600">Le Peloton</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full font-medium">Got</span>
-                        <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full font-medium">Greg</span>
-                        <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full font-medium">Max</span>
-                        <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full font-medium">Tom</span>
-                        <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full font-medium">Ré</span>
-                        <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full font-medium">Vince</span>
-                        <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full font-medium">Charly</span>
-                    </div>
-                </div>
+            <div class="grid grid-cols-3 md:grid-cols-7 gap-4 text-center">
+                <!-- Remplacer les src par "images/got.png" une fois les visages détourés -->
+                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Got&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Got</span></div>
+                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Greg&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Greg</span></div>
+                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Max&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Max</span></div>
+                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Tom&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Tom</span></div>
+                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Ré&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Ré</span></div>
+                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Vince&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Vince</span></div>
+                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Charly&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Charly</span></div>
+            </div>
 
-                <!-- A Prévoir -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-3 text-slate-600">Dans les sacoches (Chacun)</h3>
-                    <ul class="list-disc list-inside space-y-1 text-slate-700">
-                        <li>1 à 2 chambres à air</li>
-                        <li>Collation pour rouler</li>
-                        <li>Vêtements de rechange</li>
-                        <li><span class="text-emerald-600 font-semibold">✓ Serviettes fournies dans les logements</span></li>
+            <div class="mt-8 grid md:grid-cols-2 gap-4">
+                <div class="bg-slate-50 rounded-2xl p-5 border border-slate-100">
+                    <h3 class="font-bold text-slate-700 mb-3"><i class="fa-solid fa-suitcase-rolling mr-2"></i>Dans les sacoches</h3>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li><i class="fa-solid fa-check text-brand-500 mr-2"></i>1 à 2 chambres à air</li>
+                        <li><i class="fa-solid fa-check text-brand-500 mr-2"></i>Collation pour rouler & Vêtements de rechange</li>
+                        <li><i class="fa-solid fa-check text-brand-500 mr-2"></i>Serviettes (fournies dans les logements)</li>
                     </ul>
                 </div>
-            </div>
-
-            <div class="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-100">
-                <h3 class="text-md font-semibold mb-2 text-amber-800 flex items-center gap-2">
-                    🛒 Courses (faites par Max et Got)
-                </h3>
-                <p class="text-amber-900 text-sm">Brioche, mini pot de Nutella, jus d'orange, café, gin, et schweppes (canettes ou petites bouteilles).</p>
-            </div>
-        </section>
-
-        <!-- Timeline: Vendredi -->
-        <section class="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8 border-l-4 border-emerald-500">
-            <h2 class="text-3xl font-bold mb-4 text-emerald-700">Vendredi - L'Aller</h2>
-            <div class="space-y-4">
-                <div class="flex items-start gap-4">
-                    <div class="bg-emerald-100 p-2 rounded-lg text-emerald-700 font-bold mt-1">18:10</div>
-                    <div>
-                        <p class="font-semibold text-lg">RDV Gare de Tours</p>
-                        <p class="text-slate-600">Soyez à l'heure pour embarquer les vélos.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-emerald-100 p-2 rounded-lg text-emerald-700 font-bold mt-1">18:29</div>
-                    <div>
-                        <p class="font-semibold text-lg">Départ du train</p>
-                        <p class="text-slate-600">Tours ➔ Direction Bourges</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-slate-100 p-2 rounded-lg text-slate-600 text-xl mt-1">🍕</div>
-                    <div>
-                        <p class="font-semibold text-lg">Dîner à Bourges (Correspondance)</p>
-                        <p class="text-slate-600">Domino's Pizza ou Kebab face à la gare en attendant le deuxième train.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-emerald-100 p-2 rounded-lg text-emerald-700 font-bold mt-1">22:03</div>
-                    <div>
-                        <p class="font-semibold text-lg">Arrivée</p>
-                        <p class="text-slate-600">Saint-Amand-Montrond - Orval</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 mt-6">
-                    <div class="bg-slate-100 p-2 rounded-lg text-slate-600 font-bold mt-1">Nuit</div>
-                    <div>
-                        <p class="font-semibold text-lg">Logement Saint-Amand-Montrond</p>
-                        <a href="https://www.airbnb.fr/rooms/1105164868463915296?unique_share_id=c5c8227f-60b2-499e-bc4d-5f06f989ad9e&viralityEntryPoint=1&s=76&source_impression_id=p3_1780400478_P3rC2FrGpYeZx0Sf" target="_blank" class="inline-block mt-2 px-4 py-2 bg-rose-500 hover:bg-rose-600 text-white font-medium rounded-lg transition-colors">
-                            Voir sur Airbnb
-                        </a>
-                    </div>
+                <div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
+                    <h3 class="font-bold text-amber-800 mb-3"><i class="fa-solid fa-basket-shopping mr-2"></i>Courses (Max & Got)</h3>
+                    <p class="text-sm text-amber-700 leading-relaxed">
+                        Brioche, mini pot de Nutella, jus d'orange, café, gin, et schweppes (canettes ou petites bouteilles).
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Timeline: Samedi -->
-        <section class="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8 border-l-4 border-amber-500">
-            <h2 class="text-3xl font-bold mb-4 text-amber-700">Samedi - En selle</h2>
-            <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                    <div class="bg-amber-100 p-2 rounded-lg text-amber-700 font-bold mt-1">09:30</div>
-                    <div>
-                        <p class="font-semibold text-lg">Départ de l'étape</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-amber-100 p-2 rounded-lg text-amber-700 font-bold mt-1">12:30</div>
-                    <div>
-                        <p class="font-semibold text-lg">Déjeuner (km 67)</p>
-                        <p class="text-slate-600"><strong>La Petite Reine</strong> à Mehun-sur-Yèvre (Réservation à confirmer).</p>
-                        <p class="text-sm text-slate-500 mt-1"><em>Backup : La Scala</em></p>
-                    </div>
-                </div>
+        <!-- Vendredi -->
+        <section class="glass-card rounded-3xl shadow-xl overflow-hidden">
+            <div class="bg-slate-800 p-6 text-white flex justify-between items-center">
+                <h2 class="text-2xl font-bold"><i class="fa-solid fa-train mr-3"></i>Vendredi - L'Aller</h2>
+            </div>
+            <div class="p-6 md:p-8 space-y-8 relative before:absolute before:inset-0 before:ml-10 md:before:ml-12 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
                 
-                <div class="flex items-start gap-4">
-                    <div class="bg-slate-100 p-2 rounded-lg text-slate-600 text-xl mt-1">🛒</div>
-                    <div>
-                        <p class="font-semibold text-lg">Ravitaillement</p>
-                        <p class="text-slate-600">Course au Proxi de Villefranche-sur-Cher en arrivant.</p>
+                <!-- Item -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="text-brand-600 font-bold mb-1">18:10</div>
+                        <h3 class="font-bold text-slate-800 text-lg">Gare de Tours</h3>
+                        <p class="text-slate-500 text-sm mt-1">Rendez-vous pour embarquer les vélos. Départ à 18h29.</p>
                     </div>
                 </div>
 
-                <div class="flex items-start gap-4">
-                    <div class="bg-slate-100 p-2 rounded-lg text-slate-600 text-xl mt-1">🍻</div>
-                    <div>
-                        <p class="font-semibold text-lg">Soirée</p>
-                        <p class="text-slate-600">Dîner à la <strong>Guinguette de Villefranche-sur-Cher</strong>.</p>
-                        <a href="https://www.airbnb.fr/rooms/606569366256431482?unique_share_id=297ef1c9-f632-4988-8095-3dccf08277f2&viralityEntryPoint=1&s=76&source_impression_id=p3_1780400476_P3-RdKaThEUiu3KX" target="_blank" class="inline-block mt-3 px-4 py-2 bg-rose-500 hover:bg-rose-600 text-white font-medium rounded-lg transition-colors">
-                            Voir l'Airbnb du samedi soir
+                <!-- Item Restaurant -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-amber-100 text-amber-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i class="fa-solid fa-pizza-slice"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                        <h3 class="font-bold text-slate-800 text-lg">Dîner à Bourges</h3>
+                        <p class="text-slate-500 text-sm mt-1 mb-3">Pendant la correspondance : Domino's ou Kebab face à la gare.</p>
+                        <a href="https://www.google.com/maps/search/Dominos+Pizza+Gare+Bourges" target="_blank" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i>Voir sur Google Maps
                         </a>
                     </div>
                 </div>
 
-                <!-- Itinéraire Samedi -->
-                <div class="mt-6 rounded-xl overflow-hidden shadow-inner bg-slate-50 border border-slate-200">
-                    <iframe src="https://www.komoot.com/tour/3006543720/embed?share_token=a7REQJBO8jY7epvhDQxf0p0cT0Iy0sMF67EfIji1eMnY8XMYUv&amp;hl=fr&amp;layout=classic&amp;profile=1" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+                <!-- Item Logement -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-100 text-brand-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="text-brand-600 font-bold mb-1">22:03</div>
+                        <h3 class="font-bold text-slate-800 text-lg">Saint-Amand-Montrond</h3>
+                        <p class="text-slate-500 text-sm mt-1 mb-3">Arrivée et installation au logement.</p>
+                        <a href="https://www.airbnb.fr/rooms/1105164868463915296" target="_blank" class="inline-flex items-center text-sm font-semibold text-rose-500 hover:text-rose-700 bg-rose-50 px-3 py-1.5 rounded-lg transition-colors">
+                            <i class="fa-brands fa-airbnb mr-2 text-lg"></i>Voir l'Airbnb
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Samedi -->
+        <section class="glass-card rounded-3xl shadow-xl overflow-hidden">
+            <div class="bg-brand-600 p-6 text-white flex justify-between items-center">
+                <h2 class="text-2xl font-bold"><i class="fa-solid fa-bicycle mr-3"></i>Samedi - L'Étape 1</h2>
+            </div>
+            <div class="p-6 md:p-8">
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <!-- Tracé -->
+                    <div class="rounded-2xl overflow-hidden shadow-md border border-slate-200">
+                        <iframe src="https://www.komoot.com/tour/3006543720/embed?share_token=a7REQJBO8jY7epvhDQxf0p0cT0Iy0sMF67EfIji1eMnY8XMYUv&amp;hl=fr&amp;layout=classic&amp;profile=1" width="100%" height="350" frameborder="0" scrolling="no"></iframe>
+                    </div>
+
+                    <!-- Programme -->
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                            <div class="text-brand-500 mt-1"><i class="fa-solid fa-flag-checkered text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Départ à 09:30</h4>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                            <div class="text-amber-500 mt-1"><i class="fa-solid fa-utensils text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">12:30 - Déjeuner (Km 67)</h4>
+                                <p class="text-sm text-slate-500 mb-2">La Petite Reine à Mehun-sur-Yèvre.</p>
+                                <div class="flex gap-2 flex-wrap">
+                                    <a href="https://www.google.com/maps/search/La+Petite+Reine+Mehun-sur-Yevre" target="_blank" class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition"><i class="fa-solid fa-map-location-dot mr-1"></i>La Petite Reine</a>
+                                    <a href="https://www.google.com/maps/search/La+Scala+Mehun-sur-Yevre" target="_blank" class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded hover:bg-slate-200 transition"><i class="fa-solid fa-map-location-dot mr-1"></i>Backup: La Scala</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                            <div class="text-brand-500 mt-1"><i class="fa-solid fa-cart-shopping text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Ravitaillement</h4>
+                                <p class="text-sm text-slate-500">Course au Proxi de Villefranche-sur-Cher.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                            <div class="text-amber-500 mt-1"><i class="fa-solid fa-beer-mug-empty text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Soirée Guinguette</h4>
+                                <p class="text-sm text-slate-500 mb-2">Dîner à Villefranche-sur-Cher, puis Airbnb.</p>
+                                <div class="flex gap-2 flex-wrap">
+                                    <a href="https://www.google.com/maps/search/Guinguette+Villefranche-sur-Cher" target="_blank" class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition"><i class="fa-solid fa-map-location-dot mr-1"></i>La Guinguette</a>
+                                    <a href="https://www.airbnb.fr/rooms/606569366256431482" target="_blank" class="text-xs font-semibold text-rose-500 bg-rose-50 px-2 py-1 rounded hover:bg-rose-100 transition"><i class="fa-brands fa-airbnb mr-1"></i>Airbnb</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Timeline: Dimanche -->
-        <section class="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8 border-l-4 border-sky-500">
-            <h2 class="text-3xl font-bold mb-4 text-sky-700">Dimanche - Le Retour</h2>
-            <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                    <div class="bg-sky-100 p-2 rounded-lg text-sky-700 font-bold mt-1">09:30</div>
-                    <div>
-                        <p class="font-semibold text-lg">Départ de l'étape</p>
+        <!-- Dimanche -->
+        <section class="glass-card rounded-3xl shadow-xl overflow-hidden">
+            <div class="bg-sky-600 p-6 text-white flex justify-between items-center">
+                <h2 class="text-2xl font-bold"><i class="fa-solid fa-bicycle mr-3"></i>Dimanche - L'Étape 2</h2>
+            </div>
+            <div class="p-6 md:p-8">
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Tracé -->
+                    <div class="rounded-2xl overflow-hidden shadow-md border border-slate-200">
+                        <iframe src="https://www.komoot.com/tour/3006546516/embed?share_token=aDy6APNEeqi77KXWbdy7i82moqI8sLTY99kh1pnU6bUSBcAON6&amp;hl=fr&amp;layout=classic&amp;profile=1" width="100%" height="350" frameborder="0" scrolling="no"></iframe>
                     </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-sky-100 p-2 rounded-lg text-sky-700 font-bold mt-1">12:30</div>
-                    <div>
-                        <p class="font-semibold text-lg">Déjeuner (km 67)</p>
-                        <p class="text-slate-600"><strong>Pizzeria el Calzone</strong> à Bléré.</p>
-                    </div>
-                </div>
 
-                <!-- Itinéraire Dimanche -->
-                <div class="mt-6 rounded-xl overflow-hidden shadow-inner bg-slate-50 border border-slate-200">
-                    <iframe src="https://www.komoot.com/tour/3006546516/embed?share_token=aDy6APNEeqi77KXWbdy7i82moqI8sLTY99kh1pnU6bUSBcAON6&amp;hl=fr&amp;layout=classic&amp;profile=1" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+                    <!-- Programme -->
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                            <div class="text-sky-500 mt-1"><i class="fa-solid fa-flag-checkered text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Départ à 09:30</h4>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
+                            <div class="text-amber-500 mt-1"><i class="fa-solid fa-pizza-slice text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">12:30 - Déjeuner (Km 67)</h4>
+                                <p class="text-sm text-slate-500 mb-2">Pizzeria el Calzone à Bléré.</p>
+                                <a href="https://www.google.com/maps/search/Pizzeria+el+Calzone+Blere" target="_blank" class="inline-flex items-center text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition">
+                                    <i class="fa-solid fa-map-location-dot mr-1"></i>Voir sur Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="text-center py-8 text-slate-500 text-sm">
-        <p>Bon ride l'équipe ! 🚴‍♂️💨</p>
+    <footer class="text-center py-12 text-slate-400 text-sm font-medium">
+        <p>Ride Safe & Have Fun ! 🚴‍♂️💨</p>
     </footer>
 
 </body>
