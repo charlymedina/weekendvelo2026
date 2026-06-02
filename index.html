@@ -26,6 +26,11 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        /* Style spécial pour les photos détourées */
+        .detoured-pic {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
     </style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
@@ -52,15 +57,36 @@
                 <h2 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-users text-brand-500 mr-3"></i>Le Peloton</h2>
             </div>
             
-            <div class="grid grid-cols-3 md:grid-cols-7 gap-4 text-center">
-                <!-- Remplacer les src par "images/got.png" une fois les visages détourés -->
-                <div class="flex flex-col items-center group"><img src="img/got.png" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Got</span></div>
-                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Greg&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Greg</span></div>
-                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Max&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Max</span></div>
-                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Tom&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Tom</span></div>
-                <div class="flex flex-col items-center group"><img src="img/re.png" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Ré</span></div>
-                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Vince&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Vince</span></div>
-                <div class="flex flex-col items-center group"><img src="https://ui-avatars.com/api/?name=Charly&background=14b8a6&color=fff&rounded=true&bold=true" class="w-16 h-16 rounded-full shadow-md group-hover:scale-110 transition-transform"><span class="mt-2 font-semibold text-sm">Charly</span></div>
+            <div class="grid grid-cols-3 md:grid-cols-7 gap-6 text-center">
+                <!-- Remplacer les src par "img/got.png" une fois les visages détourés -->
+                <div class="flex flex-col items-center group">
+                    <img src="https://ui-avatars.com/api/?name=Got&background=14b8a6&color=fff&bold=true" class="w-16 h-16 shadow-lg group-hover:scale-110 transition-transform object-contain detoured-pic">
+                    <span class="mt-2 font-semibold text-sm">Got</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <img src="https://ui-avatars.com/api/?name=Greg&background=14b8a6&color=fff&bold=true" class="w-16 h-16 shadow-lg group-hover:scale-110 transition-transform object-contain detoured-pic">
+                    <span class="mt-2 font-semibold text-sm">Greg</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <img src="https://ui-avatars.com/api/?name=Max&background=14b8a6&color=fff&bold=true" class="w-16 h-16 shadow-lg group-hover:scale-110 transition-transform object-contain detoured-pic">
+                    <span class="mt-2 font-semibold text-sm">Max</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <img src="https://ui-avatars.com/api/?name=Tom&background=14b8a6&color=fff&bold=true" class="w-16 h-16 shadow-lg group-hover:scale-110 transition-transform object-contain detoured-pic">
+                    <span class="mt-2 font-semibold text-sm">Tom</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <img src="https://ui-avatars.com/api/?name=Ré&background=14b8a6&color=fff&bold=true" class="w-16 h-16 shadow-lg group-hover:scale-110 transition-transform object-contain detoured-pic">
+                    <span class="mt-2 font-semibold text-sm">Ré</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <img src="https://ui-avatars.com/api/?name=Vince&background=14b8a6&color=fff&bold=true" class="w-16 h-16 shadow-lg group-hover:scale-110 transition-transform object-contain detoured-pic">
+                    <span class="mt-2 font-semibold text-sm">Vince</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <img src="https://ui-avatars.com/api/?name=Charly&background=14b8a6&color=fff&bold=true" class="w-16 h-16 shadow-lg group-hover:scale-110 transition-transform object-contain detoured-pic">
+                    <span class="mt-2 font-semibold text-sm">Charly</span>
+                </div>
             </div>
 
             <div class="mt-8 grid md:grid-cols-2 gap-4">
@@ -86,43 +112,86 @@
             <div class="bg-slate-800 p-6 text-white flex justify-between items-center">
                 <h2 class="text-2xl font-bold"><i class="fa-solid fa-train mr-3"></i>Vendredi - L'Aller</h2>
             </div>
-            <div class="p-6 md:p-8 space-y-8 relative before:absolute before:inset-0 before:ml-10 md:before:ml-12 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
+            <div class="p-6 md:p-8 space-y-6 relative before:absolute before:inset-0 before:ml-10 md:before:ml-12 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
                 
                 <!-- Item -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div class="relative flex items-center gap-6 group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 text-slate-500 shadow shrink-0 z-10">
                         <i class="fa-regular fa-clock"></i>
                     </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
-                        <div class="text-brand-600 font-bold mb-1">18:10</div>
-                        <h3 class="font-bold text-slate-800 text-lg">Gare de Tours</h3>
-                        <p class="text-slate-500 text-sm mt-1">Rendez-vous pour embarquer les vélos. Départ à 18h29.</p>
+                    <div class="w-full bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="text-brand-600 font-bold mb-1">18:27</div>
+                        <p class="text-slate-800 text-sm">Accueil embarquement jusqu'à 2 min avant le départ.</p>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="relative flex items-center gap-6 group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-100 text-brand-600 shadow shrink-0 z-10">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                    </div>
+                    <div class="w-full bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="text-brand-600 font-bold mb-1">18:29</div>
+                        <h3 class="font-bold text-slate-800 text-lg">Départ : Tours</h3>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="relative flex items-center gap-6 group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 text-slate-500 shadow shrink-0 z-10">
+                        <i class="fa-solid fa-map-pin"></i>
+                    </div>
+                    <div class="w-full bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="text-brand-600 font-bold mb-1">20:12</div>
+                        <h3 class="font-bold text-slate-800 text-lg">Arrivée : Bourges</h3>
                     </div>
                 </div>
 
                 <!-- Item Restaurant -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-amber-100 text-amber-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div class="relative flex items-center gap-6 group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-amber-100 text-amber-500 shadow shrink-0 z-10">
                         <i class="fa-solid fa-pizza-slice"></i>
                     </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
-                        <h3 class="font-bold text-slate-800 text-lg">Dîner à Bourges</h3>
-                        <p class="text-slate-500 text-sm mt-1 mb-3">Pendant la correspondance : Domino's ou Kebab face à la gare.</p>
+                    <div class="w-full bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                        <h3 class="font-bold text-slate-800 text-lg">Dîner (Correspondance)</h3>
+                        <p class="text-slate-500 text-sm mt-1 mb-3">Domino's ou Kebab face à la gare.</p>
                         <a href="https://www.google.com/maps/search/Dominos+Pizza+Gare+Bourges" target="_blank" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">
                             <i class="fa-solid fa-map-location-dot mr-2"></i>Voir sur Google Maps
                         </a>
                     </div>
                 </div>
 
+                <!-- Item -->
+                <div class="relative flex items-center gap-6 group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 text-slate-500 shadow shrink-0 z-10">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div class="w-full bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="text-brand-600 font-bold mb-1">21:16</div>
+                        <p class="text-slate-800 text-sm">Accueil embarquement jusqu'à 2 min avant le départ.</p>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="relative flex items-center gap-6 group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-100 text-brand-600 shadow shrink-0 z-10">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                    </div>
+                    <div class="w-full bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="text-brand-600 font-bold mb-1">21:18</div>
+                        <h3 class="font-bold text-slate-800 text-lg">Départ : Bourges</h3>
+                    </div>
+                </div>
+
                 <!-- Item Logement -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-100 text-brand-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div class="relative flex items-center gap-6 group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-100 text-brand-500 shadow shrink-0 z-10">
                         <i class="fa-solid fa-bed"></i>
                     </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="w-full bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
                         <div class="text-brand-600 font-bold mb-1">22:03</div>
                         <h3 class="font-bold text-slate-800 text-lg">Saint-Amand-Montrond</h3>
-                        <p class="text-slate-500 text-sm mt-1 mb-3">Arrivée et installation au logement.</p>
+                        <p class="text-slate-500 text-sm mt-1 mb-3">Arrivée finale et installation au logement.</p>
                         <a href="https://www.airbnb.fr/rooms/1105164868463915296" target="_blank" class="inline-flex items-center text-sm font-semibold text-rose-500 hover:text-rose-700 bg-rose-50 px-3 py-1.5 rounded-lg transition-colors">
                             <i class="fa-brands fa-airbnb mr-2 text-lg"></i>Voir l'Airbnb
                         </a>
