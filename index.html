@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekend Vélo 2026 🚴‍♂️</title>
-    
-    <script>
-        // ==========================================
-        // PARAMÈTRE DE SUIVI LIVE
-        // ==========================================
-        // Mettez true pour afficher la carte, false pour la cacher.
-        const ACTIVER_SUIVI_LIVE = true; 
-    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -35,7 +27,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        /* Style spécial pour les photos détourées (efface le bas de l'image) */
+        /* Style spécial pour les photos détourées (remis pour supprimer les carrés blancs) */
         .detoured-pic {
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
@@ -61,31 +53,24 @@
 
         <section id="live-tracking-section" class="glass-card rounded-3xl shadow-xl overflow-hidden border-2 border-rose-500 hidden">
             <div class="bg-rose-500 p-4 text-white flex justify-between items-center">
-                <h2 class="text-xl font-bold flex items-center gap-3 tracking-tight">
-                    <span class="relative flex h-3.5 w-3.5">
+                <h2 class="text-xl font-bold flex items-center gap-3">
+                    <span class="relative flex h-3 w-3">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-white shadow-md"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
                     </span>
                     Suivi Live Actif
                 </h2>
-                <a href="https://livetracker.getcadence.app/Mzb8U65254J4fp" target="_blank" class="px-5 py-2.5 bg-white text-rose-600 rounded-xl text-sm font-semibold hover:bg-rose-50 shadow transition flex items-center gap-2">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    Ouvrir en plein écran
+                <a href="https://livetracker.getcadence.app/Mzb8U65254J4fp" target="_blank" class="text-sm font-medium hover:underline flex items-center gap-1">
+                    Ouvrir l'app <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
             <div class="relative w-full h-[400px] bg-slate-100">
-                <iframe src="https://livetracker.getcadence.app/Mzb8U65254J4fp" class="w-full h-full border-0 shadow-inner"></iframe>
+                <iframe src="https://livetracker.getcadence.app/Mzb8U65254J4fp" class="w-full h-full border-0"></iframe>
             </div>
         </section>
 
-        <script>
-            if (ACTIVER_SUIVI_LIVE) {
-                document.getElementById('live-tracking-section').classList.remove('hidden');
-            }
-        </script>
-
-        <section class="glass-card rounded-3xl shadow-xl p-8">
-            <div class="flex items-center justify-between mb-8">
+        <section id="equipe-section" class="glass-card rounded-3xl shadow-xl p-8 space-y-8">
+            <div class="flex items-center justify-between">
                 <h2 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-users text-brand-500 mr-3"></i>Le Peloton</h2>
             </div>
             
@@ -120,10 +105,10 @@
                 </div>
             </div>
 
-            <div class="mt-8 grid md:grid-cols-2 gap-4">
+            <div id="logistique-section" class="mt-8 grid md:grid-cols-2 gap-4">
                 <div class="bg-slate-50 rounded-2xl p-5 border border-slate-100">
                     <h3 class="font-bold text-slate-700 mb-3"><i class="fa-solid fa-suitcase-rolling mr-2"></i>Dans les sacoches</h3>
-                    <ul class="text-sm text-slate-600 space-y-2 list-none">
+                    <ul class="text-sm text-slate-600 space-y-2 relative list-none">
                         <li><i class="fa-solid fa-check text-brand-500 mr-2"></i>1 à 2 chambres à air</li>
                         <li><i class="fa-solid fa-check text-brand-500 mr-2"></i>Outils vélo</li>
                         <li><i class="fa-solid fa-check text-brand-500 mr-2"></i>Gourdes</li>
@@ -144,15 +129,15 @@
             </div>
         </section>
 
-        <section class="glass-card rounded-3xl shadow-xl overflow-hidden">
+        <section id="vendredi-section" class="glass-card rounded-3xl shadow-xl overflow-hidden">
             <div class="bg-slate-800 p-6 text-white flex justify-between items-center">
                 <h2 class="text-2xl font-bold"><i class="fa-solid fa-train mr-3"></i>Vendredi - L'Aller</h2>
             </div>
             <div class="p-6 md:p-8 space-y-6 relative before:absolute before:inset-0 before:ml-10 md:before:ml-12 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
 
-                <div class="relative flex items-center gap-6 group">
+                                <div class="relative flex items-center gap-6 group">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 text-slate-500 shadow shrink-0 z-10">
-                        <i class="fa-regular fa-clock"></i>
+                        <i class="fa-solid fa-map-pin"></i>
                     </div>
                     <div class="w-full bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
                         <div class="text-brand-600 font-bold mb-1">18:10</div>
@@ -160,6 +145,7 @@
                     </div>
                 </div>
 
+                
                 <div class="relative flex items-center gap-6 group">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-100 text-brand-600 shadow shrink-0 z-10">
                         <i class="fa-solid fa-flag-checkered"></i>
@@ -246,6 +232,7 @@
                                 <p class="text-sm text-slate-500 mb-2">La Petite Reine à Mehun-sur-Yèvre.</p>
                                 <div class="flex gap-2 flex-wrap">
                                     <a href="https://www.google.com/maps/search/La+Petite+Reine+Mehun-sur-Yevre" target="_blank" class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition"><i class="fa-solid fa-map-location-dot mr-1"></i>La Petite Reine</a>
+                                    <a href="https://www.google.com/maps/search/La+Scala+Mehun-sur-Yevre" target="_blank" class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded hover:bg-slate-200 transition"><i class="fa-solid fa-map-location-dot mr-1"></i>Backup: La Scala</a>
                                 </div>
                             </div>
                         </div>
@@ -309,6 +296,37 @@
         </section>
 
     </main>
+
+    <script>
+        function gererAffichageAutomatique() {
+            const maintenant = new Date();
+            
+            // Date cible : 06 Juin 2026, 09:00:00
+            // Note : En JavaScript, les mois commencent à 0 (0=janvier, 5=juin)
+            const dateBascule = new Date(2026, 5, 3, 16, 35, 0); // 2026-06-06 09:00:00
+
+            // Ciblage des éléments à afficher/cacher
+            const sectionLive = document.getElementById('live-tracking-section');
+            const sectionLogistique = document.getElementById('logistique-section'); // "Dans les sacoches" & "Courses"
+            const sectionVendredi = document.getElementById('vendredi-section'); // Tout le bloc vendredi
+
+            // === VÉRIFICATION DU CRÉNEAU DE LA COURSE ===
+            if (maintenant >= dateBascule) {
+                // --- PENDANT/APRÈS LA COURSE (Vue Partenaires/Suiveurs) ---
+                sectionLive.classList.remove('hidden'); // Montrer le Live
+                sectionLogistique.classList.add('hidden'); // Cacher la Logistique internal
+                sectionVendredi.classList.add('hidden'); // Cacher le bloc du vendredi
+            } else {
+                // --- AVANT LA COURSE (Vue Participants) ---
+                sectionLive.classList.add('hidden'); // S'assurer que le Live est caché
+                sectionLogistique.classList.remove('hidden'); // S'assurer que la Logistique est visible
+                sectionVendredi.classList.remove('hidden'); // S'assurer que le Vendredi est visible
+            }
+        }
+
+        // Exécuter la fonction au chargement de la page
+        gererAffichageAutomatique();
+    </script>
 
 </body>
 </html>
